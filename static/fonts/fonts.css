@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Edosz';
+    src: url('./Edosz/edosz.ttf')  format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+
+@font-face {
+    font-family: 'Amatic';
+    src: url('./Amatic/AmaticSC-Regular.ttf')  format('truetype'),
+         url('./Amatic/AmaticSC-Bold.ttf')  format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

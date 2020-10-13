@@ -18,10 +18,10 @@ module.exports = {
     {
       resolve: 'gatsby-source-cosmicjs',
       options: {
-        bucketSlug: process.env.COSMIC_BUCKET,
+        bucketSlug: "pekne-blog",
         objectTypes: ['posts','settings'],
         apiAccess: {
-          read_key: process.env.COSMIC_READ_KEY,
+          read_key: "NKP4nzAUU3uJ62yRi3xMCANqMe4ViYwSxgx0YUB2jOCiYv1tDa",
         },
         localMedia: true
       }
@@ -36,6 +36,15 @@ module.exports = {
       resolve: 'gatsby-plugin-typography',
       options: {
         pathToConfigModule: 'src/utils/typography',
+      },
+    },
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        custom: {
+          families: ["Edosz", "Amatic"],
+          urls: ["/fonts/fonts.css"],
+        },
       },
     },
   ],

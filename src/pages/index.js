@@ -1,53 +1,69 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import get from 'lodash/get'
-import { Helmet } from 'react-helmet'
-import { graphql } from 'gatsby'
+import React from "react";
+import { Link } from "gatsby";
+import get from "lodash/get";
+import { Helmet } from "react-helmet";
+import { graphql } from "gatsby";
+import Moment from "moment";
 
-import Bio from '../components/Bio'
-import Layout from '../components/layout'
-import { rhythm } from '../utils/typography'
+import Bio from "../components/Bio";
+import Layout from "../components/layout";
+import { rhythm } from "../utils/typography";
 
 class BlogIndex extends React.Component {
   render() {
+    Moment.locale("cs");
+    require("moment/locale/cs");
+    console.log(Moment.locale());
     const siteTitle = get(
       this,
-      'props.data.cosmicjsSettings.metadata.site_title'
-    )
-    const posts = get(this, 'props.data.allCosmicjsPosts.edges')
-    const author = get(this, 'props.data.cosmicjsSettings.metadata')
-    const location = get(this, 'props.location')
+      "props.data.cosmicjsSettings.metadata.site_title"
+    );
+    const posts = get(this, "props.data.allCosmicjsPosts.edges");
+    const author = get(this, "props.data.cosmicjsSettings.metadata");
+    const location = get(this, "props.location");
 
     return (
       <Layout location={location}>
         <Helmet title={siteTitle} />
         <Bio settings={author} />
+        <Helmet>
+          <script
+            async
+            data-uid="9cae5604d3"
+            src="https://chipper-architect-3919.ck.page/9cae5604d3/index.js"
+          ></script>
+        </Helmet>
         {posts.map(({ node }) => {
-          const title = get(node, 'title') || node.slug
+          const title = get(node, "title") || node.slug;
           return (
             <div key={node.slug}>
               <h3
                 style={{
                   marginBottom: rhythm(1 / 4),
+                  textDecoration: null,
                 }}
               >
-                <Link style={{ boxShadow: 'none' }} to={`posts/${node.slug}`}>
+                <Link
+                  className="post_header"
+                  style={{ boxShadow: "none", fontSize: rhythm(1.6) }}
+                  to={`posts/${node.slug}`}
+                >
                   {title}
                 </Link>
               </h3>
-              <small>{node.created}</small>
+              <small>{Moment(node.created).format("D. MMMM Y")}</small>
               <p
                 dangerouslySetInnerHTML={{ __html: node.metadata.description }}
               />
             </div>
-          )
+          );
         })}
       </Layout>
-    )
+    );
   }
 }
 
-export default BlogIndex
+export default BlogIndex;
 
 export const pageQuery = graphql`
   query IndexQuery {
@@ -74,4 +90,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
