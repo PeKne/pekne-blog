@@ -26,13 +26,6 @@ class BlogIndex extends React.Component {
       <Layout location={location}>
         <Helmet title={siteTitle} />
         <Bio settings={author} />
-        <Helmet>
-          <script
-            async
-            data-uid="9cae5604d3"
-            src="https://chipper-architect-3919.ck.page/9cae5604d3/index.js"
-          ></script>
-        </Helmet>
         {posts.map(({ node }) => {
           const title = get(node, "title") || node.slug;
           return (
