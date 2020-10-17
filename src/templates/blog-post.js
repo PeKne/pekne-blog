@@ -87,7 +87,7 @@ class BlogPostTemplate extends React.Component {
             fontWeight: 900
           }}
         >
-          {Moment(post.created).format("D. MMMM Y")}
+          {Moment(post.metadata.date).format("D. MMMM Y")}
         </p>
           <BackgroundImage
             Tag="div"
@@ -158,6 +158,7 @@ export const pageQuery = graphql`
             }
           }
         }
+        date
       }
     }
     cosmicjsSettings(slug: { eq: "general" }) {
