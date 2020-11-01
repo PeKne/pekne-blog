@@ -14,6 +14,8 @@ Lincoln.overrideThemeStyles = () => ({
     fontWeight: "bold",
     backgroundImage: "none",
     fontFamily: "Edosz",
+    lineHeight: 1,
+    color: "black",
   },
 
   ".post_header": {
@@ -21,7 +23,12 @@ Lincoln.overrideThemeStyles = () => ({
     backgroundImage: "none",
     color: "orange",
     fontWeight: 600,
+    marginTop: 20
   },
+
+  ".backButton":{
+  }
+  
 });
 
 delete Lincoln.googleFonts;

@@ -25,6 +25,25 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={location}>
+        <div
+          className="backArrow"
+          style={{
+            marginLeft: rhythm(1),
+            textAlign: "center",
+          }}
+          onClick={() => console.log("hello")}
+        >
+          <Link
+            style={{
+              fontSize: rhythm(1.7),
+              backgroundImage: "none",
+              color: "black",
+            }}
+            to={"/"}
+          >
+            ←
+          </Link>
+        </div>
         <style>
           {`
           .post-content {
@@ -60,17 +79,49 @@ class BlogPostTemplate extends React.Component {
           .fr-img-wrap>a>img, .fr-img-wrap>img{
             width: 100% !important
           }
+          
+          .backArrow{
+            position: absolute;
+            left: 0;
+            top: 0;
+            cursor: pointer;
+          }
 
+          .backButton{
+            position: relative;
+            cursor: pointer;
+          }
+
+          a:hover{
+            color: orange !important;
+          }
+
+          a: {
+            background-image: none;
+          }
+
+          .backArrow a:hover, .site_header:hover {
+            color: black !important;
+          }
+
+          .site_header: {
+            color: black !important ;
+          }
+
+          body:{
+            color: black !important;
+          }
           
         `}
         </style>
         <Helmet title={`${post.title} | ${siteTitle}`} />
-        <h1 className="post_header"
+        <h1
+          className="post_header"
           style={{
-            marginTop: rhythm(0.5),
+            marginTop: rhythm(1),
             marginBottom: rhythm(0.5),
             fontSize: rhythm(1.7),
-            textAlign: "center"
+            textAlign: "center",
           }}
         >
           {post.title}
@@ -79,29 +130,44 @@ class BlogPostTemplate extends React.Component {
           style={{
             ...scale(-1 / 5),
             display: "block",
-            marginBottom: rhythm(0.6),
             marginTop: rhythm(-0.45),
             textAlign: "center",
             fontFamily: "Amatic",
             fontSize: rhythm(0.8),
-            fontWeight: 900
+            fontWeight: 900,
           }}
         >
           {Moment(post.metadata.date).format("D. MMMM Y")}
         </p>
-          <BackgroundImage
-            Tag="div"
-            className="post-hero"
-            fluid={post.metadata.hero.local.childImageSharp.fluid}
-            backgroundColor={`#007ACC`}
-            style={{
-              marginBottom: rhythm(0.6),
-            }}
-          />
+        <BackgroundImage
+          Tag="div"
+          className="post-hero"
+          fluid={post.metadata.hero.local.childImageSharp.fluid}
+          backgroundColor={`#007ACC`}
+          style={{
+            marginBottom: rhythm(0.6),
+          }}
+        />
         <div
           className="post-content"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
+        <div
+          className="backButton"
+          style={{marginBottom: rhythm(0.6),}}
+          onClick={() => console.log("hello")}
+        >
+          <Link
+            style={{
+              fontSize: rhythm(0.8),
+              backgroundImage: "none",
+              color: "black",
+            }}
+            to={"/"}
+          >
+            ← Zpět
+          </Link>
+        </div>
         <hr
           style={{
             marginBottom: rhythm(1),

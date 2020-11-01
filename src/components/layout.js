@@ -98,6 +98,7 @@ export default ({ children, location }) => (
                 marginRight: "auto",
                 maxWidth: rhythm(24),
                 textAlign: "center",
+                marginTop: rhythm(0.2)
               }}
             >
               <Link
