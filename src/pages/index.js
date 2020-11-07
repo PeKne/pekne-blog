@@ -60,12 +60,12 @@ export default BlogIndex;
 
 export const pageQuery = graphql`
   query IndexQuery {
-    allCosmicjsPosts(sort: { fields: [created], order: DESC }, limit: 1000) {
+    allCosmicjsPosts(sort: { fields: [metadata___date], order: DESC }, limit: 1000) {
       edges {
         node {
           metadata {
             description,
-            date
+            date(formatString: "DD MMMM, YYYY"),
           }
           slug,
           title,
