@@ -1,4 +1,4 @@
-# personal travel blog
+# Personal Travel Blog
 Implemented in Gatsby.js with use ofCosmic.js as CMS and. Project is deployed in Netlify.
 
 Currently accesible on: [https://pekneblog.gtsb.io/](https://pekneblog.gtsb.io/)
