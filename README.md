@@ -1,12 +1,7 @@
-# Gatsby + Cosmic
+# personal travel blog
+Implemented in Gatsby.js with use ofCosmic.js as CMS and. Project is deployed in Netlify.
 
-![gatsby-blog-cosmicjs](https://cdn.cosmicjs.com/fe5196f0-42c2-11ea-8d10-df553329919a-gatsby-blog-cosmic.png "The index page of the starter blog")
-
-> This repo contains an example blog website that is built with [Gatsby](https://www.gatsbyjs.org/), and [Cosmic](https://www.cosmicjs.com).
-
-> [See live demo hosted on Netlify](https://gatsby-blog-cosmicjs.netlify.com/)
-
-> Uses the [Cosmic Gatsby Source Plugin](https://www.npmjs.com/package/gatsby-source-cosmicjs)
+Currently accesible on: [https://pekneblog.gtsb.io/](https://pekneblog.gtsb.io/)
 
 ## Prerequisites
 
